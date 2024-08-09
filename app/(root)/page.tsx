@@ -1,14 +1,20 @@
 //import CategoryFilter from '@/components/shared/CategoryFilter';
-//import Collection from '@/components/shared/Collection'
+import Collection from '@/components/shared/Collection'
 //import Search from '@/components/shared/Search';
 import { Button } from '@/components/ui/button'
-//import { getAllEvents } from '@/lib/actions/event.actions';
+import { getAllEvents } from '@/lib/actions/event.actions';
 //import { SearchParamProps } from '@/types';
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Home() {
+export default async function Home() {
   
+  const events = await getAllEvents({
+    query: '',
+    category: '',
+    page: 1,
+    limit: 6
+  })
 
   return (
     <>
@@ -36,13 +42,22 @@ export default function Home() {
       </section> 
 
       <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
-        <h2 className="h2-bold">Your Enjoyment <br /> Our Responsibility</h2>
+        <h2 className="h2-bold">Your Enjoyment <br /> Your Responsibility</h2>
 
         <div className="flex w-full flex-col gap-5 md:flex-row">
-          
+          Search
+          CategoryFilter
         </div>
 
-        
+        <Collection 
+          data={events?.data}
+          emptyTitle="No Perks Found"
+          emptyStateSubtext="Come back later"
+          collectionType="All_Events"
+          limit={6}
+          page={1}
+          totalPages={2}
+        />
       </section>
     </>
   )

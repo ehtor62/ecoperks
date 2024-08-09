@@ -4,8 +4,8 @@ export const headerLinks = [
       route: '/',
     },
     {
-      label: 'Create Perk',
-      route: '/perks/create',
+      label: 'Create Offer',
+      route: '/events/create',
     },
     {
       label: 'My Profile',

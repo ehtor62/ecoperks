@@ -51,7 +51,7 @@ export const formatPrice = (price: string) => {
   const amount = parseFloat(price)
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'SFR',
   }).format(amount)
 
   return formattedPrice
@@ -88,6 +88,13 @@ export function removeKeysFromQuery({ params, keysToRemove }: RemoveUrlQueryPara
 }
 
 export const handleError = (error: unknown) => {
-  console.error(error)
-  throw new Error(typeof error === 'string' ? error : JSON.stringify(error))
-}
+  if (typeof error === 'string') {
+    console.error('String error:', error);
+  } else if (error instanceof Error) {
+    console.error('Error object:', error.message);
+    console.error('Stack trace:', error.stack);
+  } else {
+    console.error('Unknown error:', JSON.stringify(error));
+  }
+  throw new Error(typeof error === 'string' ? error : JSON.stringify(error));
+};
