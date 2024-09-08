@@ -4,7 +4,7 @@ import { createOrder } from '@/lib/actions/order.actions'
 
 const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY!)
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 
 export async function POST(request: Request) {
   const body = await request.clone().arrayBuffer()
