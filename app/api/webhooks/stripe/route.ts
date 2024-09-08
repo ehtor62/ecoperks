@@ -4,15 +4,11 @@ import { createOrder } from '@/lib/actions/order.actions'
 
 const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY!)
 
-export const config = {
-    api: {
-      bodyParser: false,
-    },
-  }
+export const runtime = 'edge'
 
 export async function POST(request: Request) {
-    const body = await request.clone().arrayBuffer()
-    const rawBody = Buffer.from(body)
+  const body = await request.clone().arrayBuffer()
+  const rawBody = Buffer.from(body)
 
   const sig = request.headers.get('stripe-signature') as string
   const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!
