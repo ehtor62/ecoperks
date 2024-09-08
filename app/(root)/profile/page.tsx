@@ -28,7 +28,7 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
           <h3 className='h3-bold text-center sm:text-left'>My Tickets</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
             <Link href="/#events">
-              Explore More Events
+              Explore More Perks
             </Link>
           </Button>
         </div>
@@ -53,7 +53,7 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
           <h3 className='h3-bold text-center sm:text-left'>Events Organized</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
             <Link href="/events/create">
-              Create New Event
+              Create New Perks
             </Link>
           </Button>
         </div>
@@ -64,7 +64,7 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
           data={organizedEvents?.data}
           emptyTitle="No events have been created yet"
           emptyStateSubtext="Go create some now"
-          collectionType="Events_Organized"
+          collectionType="Perks_Organized"
           limit={3}
           page={eventsPage}
           urlParamName="eventsPage"
