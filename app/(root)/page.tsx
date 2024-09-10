@@ -25,7 +25,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
         <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
           <div className="flex flex-col justify-center gap-8">
             <h1 className="h1-bold">Enjoy Attractions through Climate-Friendly Actions</h1>
-            <p className="p-regular-20 md:p-regular-24">All our choices have an environmental impact, so why not make conscious decisions that benefit us all and be rewarded for them?</p>
+            <p className="p-regular-20 md:p-regular-24">All our choices have an environmental impact, so why not make conscious
+               decisions that benefit us all and be <span className="text-pink-800"> rewarded</span> for them?</p>
             <Button size="lg" asChild className="button w-full sm:w-fit">
               <Link href="#events">
                 Engage Now
@@ -44,10 +45,21 @@ export default async function Home({ searchParams }: SearchParamProps) {
       </section> 
 
       <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
-        <h2 className="italic text-lg">Built on trust and good energy. No matter if you ride a bike, use public transportation,
-           or collect trash, you can spend your good energy to collect the listed rewards, and we trust you when you ask to pay
-           with it. After all, the only one you would be cheating is yourself if you miss out on doing good for our planet.</h2>
-         
+      <div className="relative">
+        <span className="absolute top-0 left-0 text-8xl text-pink-800 font-serif leading-none -translate-x-1/2 -translate-y-1/2">
+          *
+        </span>
+        <h2 className="italic text-lg pl-8 relative z-10">
+          Built on trust and good energy. No matter if you ride a bike, use public transportation,
+          or collect trash, you can spend your good energy to collect the listed rewards, and we trust you when you ask to pay
+          with it. After all, the only one you would be cheating is yourself if you miss out on doing good for our planet.</h2>
+          
+        </div>
+        <h2 className="italic text-xl font-bold text-pink-800"> How it works</h2>
+          <p>Earn rewards at local attractions ranging from a free lunch or a cup of coffee to a kayak tour or even a free entrance
+          to a museum. All you need to do is, for instance, bike instead of drive, help maintain the city, work in an urban garden,
+          or pledge to sustainable behaviour. Find the attractions and see how they reward your actions below.</p>
+
         <div className="flex w-full flex-col gap-5 md:flex-row">
           <Search />
           <CategoryFilter />
