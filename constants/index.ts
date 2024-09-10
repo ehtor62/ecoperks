@@ -8,6 +8,14 @@ export const headerLinks = [
       route: '/events/create',
     },
     {
+      label: 'FAQs for Users',
+      route: '/faq/consumer',
+    },
+    {
+      label: 'FAQs for Organizers',
+      route: '/faq/organizer',
+    },
+    {
       label: 'My Profile',
       route: '/profile',
     },

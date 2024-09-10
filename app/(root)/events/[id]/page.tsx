@@ -42,12 +42,12 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
 
               <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
                 by{' '}
-                <span className="text-primary-500">{event.organizer.firstName} {event.organizer.lastName}</span>
+                <span className="text-primary-500">{event.organizer.username}</span>
               </p>
             </div>
           </div>
 
-          <CheckoutButton event={event} />
+          {!event.isFree && <CheckoutButton event={event} />}
 
           <div className="flex flex-col gap-5">
             <div className='flex gap-2 md:gap-3'>
@@ -57,6 +57,9 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
                   {formatDateTime(event.startDateTime).dateOnly} - {' '}
                   {formatDateTime(event.startDateTime).timeOnly}
                 </p>
+                <span className="mx-3"> {/* Adding a margin between the two date-time ranges */}
+                  -
+                </span>
                 <p>
                   {formatDateTime(event.endDateTime).dateOnly} -  {' '}
                   {formatDateTime(event.endDateTime).timeOnly}
@@ -71,9 +74,17 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
           </div>
 
           <div className="flex flex-col gap-2">
-            <p className="p-bold-20 text-grey-600">What You'll Learn:</p>
+            <p className="p-bold-20 text-grey-600">What you get in return of your sustainable action:</p>
             <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
-            <p className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline">{event.url}</p>
+            <a 
+              href={event.url} 
+              className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              {event.url}
+            </a>
+            
           </div>
         </div>
       </div>
@@ -81,7 +92,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
 
     {/* EVENTS with the same category */}
     <section className="wrapper my-8 flex flex-col gap-8 md:gap-12">
-      <h2 className="h2-bold">Related Events</h2>
+      <h2 className="h2-bold">Related Perks</h2>
 
       <Collection 
           data={relatedEvents?.data}
