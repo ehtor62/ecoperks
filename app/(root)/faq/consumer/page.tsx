@@ -48,10 +48,7 @@ export default function FAQPage() {
       title: "How can one participate in ecoPerks?",
       content: (
         <p style={{ color: 'purple' }}>
-          <b>For Organizers</b> <br></br> Participation is simple. Just sign up to this website for free and start creating perks.
-           The "FAQ for Organizers" provides creative ideas of how to engage your consumers in a sustainable fashion. Once created,
-          it will show up on the home page. <br></br> <br></br>
-          <b>For Consumers</b> <br></br> Participation is simple. Tourists and residents can redeem rewards depending on the action/attraction
+          Participation is simple. Tourists and residents can redeem rewards depending on the action/attraction
           offered. These actions include cycling, participating in cleanup efforts, volunteering at urban farms and many more. By showing proof
           of green actions, such as train tickets or bicycles, you are entitled for the reward. Click the map on this site to find all participating attractions and which action
           they reward. Some attractions have limited availability, so remember to check if you have to buy a ticket in advance.

@@ -33,14 +33,41 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
 export default function FAQOrgPage() {
   const faqOrgItems = [
     {
-      title: "What is the purpose of ecoPerks?",
+      title: "10 compelling reasons to become an organizer",
       content: (
         <p style={{ color: 'purple' }}>
-          The purpose of ecoPerks is to encourage sustainable behaviour and enrich the cultural experience of
-          visitors and residents anywhere by transforming green actions into currency for cultural experiences.
-          The campaign about ecoPerks runs worldwide, and it is not intended to increase tourism. With ecoPerks,
-          we are empowering people to experience more of what each place offers while placing less burden on our planet.
-          It's about creating meaningful and memorable experiences that are enjoyable and environmentally responsible.
+            1.	Positive Public Image:<br></br>
+	        Corporate Social Responsibility (CSR): Demonstrating a commitment to sustainability enhances the company's or
+            institution's reputation. Brand Loyalty: Customers and visitors are more likely to support businesses that prioritize
+            environmental responsibility.<br></br><br></br>
+            2.	Increased Customer Engagement:<br></br>
+	        Customer Retention: Offering unique perks and incentives can lead to higher customer retention rates.
+            New Customer Attraction: Eco-friendly initiatives attract environmentally conscious consumers.<br></br><br></br>
+            3.	Cost Savings:<br></br>
+            Volunteer Work: Engaging volunteers in tasks like park maintenance or gardening reduces labor costs.
+            Waste Reduction: Encouraging customers to bring their own containers reduces packaging expenses.<br></br><br></br>
+            4.	Regulatory Compliance:<br></br>
+            Environmental Regulations: Proactively engaging in sustainable practices helps businesses comply with environmental laws and regulations.
+            Grants and Incentives: Some governments offer grants or incentives to businesses that implement green initiatives.<br></br><br></br>
+            5.	Employee Satisfaction:<br></br>
+            Workplace Morale: Employees take pride in working for socially responsible companies, which can improve morale and reduce turnover.
+            Employee Engagement: Opportunities for employees to participate in sustainability initiatives can boost engagement and
+            teamwork.<br></br><br></br>
+            6.	Market Differentiation:<br></br>
+            Competitive Advantage: Offering unique, sustainability-focused engagements can differentiate a business from its competitors.
+            Innovation: Developing eco-friendly initiatives can lead to innovative business practices and solutions.<br></br><br></br>
+            7.	Networking Opportunities:<br></br>
+            Partnerships: Collaborating with other eco-conscious businesses and organizations can lead to beneficial partnerships.
+            Community Involvement: Active participation in community sustainability efforts can strengthen local ties and support.<br></br><br></br>
+            8.	Customer Feedback and Insights:<br></br>
+            Engagement Programs: These initiatives provide a platform for direct interaction with customers, leading to valuable
+            feedback and insights.<br></br><br></br>
+            9.	Marketing and Promotion:<br></br>
+            Media Attention: Eco-friendly initiatives can attract positive media coverage and enhance marketing efforts.
+            Social Media Content: Engaging activities provide content for social media and other marketing channels.<br></br><br></br>
+            10.	Long-term Sustainability:<br></br>
+            Resource Conservation: Reducing waste and conserving resources ensures long-term sustainability and profitability.
+            Future-proofing: Businesses that adapt to environmental trends are better prepared for future market changes.
         </p>
       )
     },
@@ -48,26 +75,12 @@ export default function FAQOrgPage() {
       title: "How can one participate in ecoPerks?",
       content: (
         <p style={{ color: 'purple' }}>
-          <b>For Organizers</b> <br></br> Participation is simple. Just sign up to this website for free and start creating perks.
-           The "FAQ for Organizers" provides creative ideas of how to engage your consumers in a sustainable fashion. Once created,
-          it will show up on the home page. <br></br> <br></br>
-          <b>For Consumers</b> <br></br> Participation is simple. Tourists and residents can redeem rewards depending on the action/attraction
-          offered. These actions include cycling, participating in cleanup efforts, volunteering at urban farms and many more. By showing proof
-          of green actions, such as train tickets or bicycles, you are entitled for the reward. Click the map on this site to find all participating attractions and which action
-          they reward. Some attractions have limited availability, so remember to check if you have to buy a ticket in advance.
+          Participation is simple. Just sign up to this website for free and start creating perks.
+          Once created, it will show up on the home page.
         </p>
       )
     },
-    {
-      title: "How do I get in touch with the individual attractions?",
-      content: (
-        <p style={{ color: 'purple' }}>
-          If you have questions about rewards and actions, you should contact the individual partner directly by finding
-          their contact information on the{' '}
-          <a href="/" className="text-blue-600 hover:underline">complete list of attractions</a>.
-        </p>
-      )
-    },
+    
     {
       title: "What proof is required to show someone has participated in a green action?",
       content: (
@@ -79,29 +92,8 @@ export default function FAQOrgPage() {
         </p>
       )
     },
-    {
-      title: "How sustainable is my destination?",
-      content: (
-        <p style={{ color: 'purple' }}>
-          According to the Global Destination Sustainability Index the list of the most sustainable destinations in the world can be found{' '}
-          <a href="https://www.gds.earth/index/top-40-cities/" className="text-blue-600 hover:underline"
-            target="_blank" rel="noopener noreferrer">here</a>.
-        </p>
-      )
-    },
-    {
-      title: "How does ecoPerks specifically contribute to reducing my current destination's carbon footprint?",
-      content: (
-        <p style={{ color: 'purple' }}>
-          ecoPerks encourages the use of bicycles, public transportation, and participation in environmental activities,
-          which collectively reduce the carbon emissions by promoting greener modes of transportation and waste reduction.
-          However, the environmental burden of transportation to and from your current destination is much more significant
-          than that of local transportation. Consequently, ecoPerks is encouraging both visitors and locals to make more sustainable choices
-          and not travel long-distance for a specific attraction.
-        </p>
-      )
-    }
-  ];
+    
+      ];
 
   return (
     <div className="container mx-auto py-8">
