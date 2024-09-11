@@ -277,7 +277,7 @@ type EventFormProps = {
                           <FormItem>
                             <FormControl>
                               <div className="flex items-center">
-                                <label htmlFor="isFree" className="whitespace-nowrap pr-3 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Free Ticket</label>
+                                <label htmlFor="isFree" className="whitespace-nowrap pr-3 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Free Access</label>
                                 <Checkbox
                                   onCheckedChange={field.onChange}
                                   checked={field.value}

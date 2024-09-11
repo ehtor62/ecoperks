@@ -5,17 +5,14 @@ import React, { useState } from 'react';
 interface AccordionItemProps {
   title: string;
   content: React.ReactNode;
+  isOpen: boolean;
+  onClick: () => void;
 }
 
-const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, isOpen, onClick }) => {
   return (
     <div className="border-b border-gray-200">
-      <button
-        className="w-full text-left py-4 px-6 focus:outline-none flex justify-between items-center"
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <button className="w-full text-left py-4 px-6 focus:outline-none flex justify-between items-center" onClick={onClick} >
         <span className="font-medium">{title}</span>
         <span className={`transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
           ▼
@@ -31,6 +28,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
 };
 
 export default function FAQPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const faqItems = [
     {
       title: "What is the purpose of ecoPerks?",
@@ -97,18 +95,55 @@ export default function FAQPage() {
           and not travel long-distance for a specific attraction.
         </p>
       )
+    },
+    {
+      title: "Why should I participate in sustainable engagements?",
+      content: (
+        <p style={{ color: 'purple' }}>
+          1.	Cost Savings:<br></br>
+          Free services or discounts on activities like kayak rides, surf lessons, and museum entries reduce personal expenses<br></br><br></br>
+          2.	Environmental Impact:<br></br>
+          Directly contributing to environmental conservation and sustainability efforts provides a sense of fulfillment and purpose<br></br><br></br>
+          3.	Health and Well-being:<br></br>
+          Activities such as beach cleanups, park maintenance, and tree planting promote physical activity and improve mental health<br></br><br></br>
+          4.	Educational Opportunities:<br></br>
+          Participating in workshops or educational programs enhances knowledge about environmental issues and sustainable practices<br></br><br></br>
+          5.	Community Building:<br></br>
+          Engaging in group activities fosters a sense of community and connection with like-minded individuals<br></br><br></br>
+          6.	Exclusive Access:<br></br>
+          Gaining access to special events, concerts, or fitness classes that may not be otherwise affordable or available<br></br><br></br>
+          7.	Personal Recognition:<br></br>
+          Receiving public acknowledgment or rewards boosts self-esteem and personal satisfaction<br></br><br></br>
+          8.	Support for Local Businesses:<br></br>
+          Contributing to local eco-friendly initiatives helps support small businesses and local economies<br></br><br></br>
+          9.	Long-term Benefits:<br></br>
+          Investing time and effort into sustainability leads to a healthier environment for future generations<br></br><br></br>
+          10.	Enhanced Experiences:<br></br>  
+          Unique experiences such as personalized museum tours or hands-on gardening work offer memorable and enriching activities.
+        </p>
+      )
     }
   ];
+
+  const handleItemClick = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-bold mb-6">Frequently Asked Questions by Users</h1>
       
-      <div className="border-t border-gray-200">
-        {faqItems.map((item, index) => (
-          <AccordionItem key={index} title={item.title} content={item.content} />
-        ))}
-      </div>
+        <div className="border-t border-gray-200">
+          {faqItems.map((item, index) => (
+            <AccordionItem 
+              key={index} 
+              title={item.title} 
+              content={item.content} 
+              isOpen={openIndex === index}
+              onClick={() => handleItemClick(index)}
+            />
+          ))}
+        </div>
     </div>
   );
 }
