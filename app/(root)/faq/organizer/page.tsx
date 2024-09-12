@@ -45,9 +45,9 @@ export default function FAQOrgPage() {
           </thead>
           <tbody>
             <tr>
-              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Beach Cleanup for Free Surf Lessons</td>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Beach Cleanup for Free Snack</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Participate in beach cleanups</td>
-              <td style={{ border: '1px solid black', padding: '8px' }}>Free surf lesson or rental</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>After Sail lesson or rental get a Panini and a Drink</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Waste bags</td>
               <td style={{ border: '1px solid black', padding: '8px', textAlign: 'center' }}></td>
             </tr>
@@ -122,7 +122,7 @@ export default function FAQOrgPage() {
               <td style={{ border: '1px solid black', padding: '8px', textAlign: 'center' }}></td>
             </tr>
             <tr>
-            <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Ski Resort Day Pass</td>
+            <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Ski Resort Day Pass on weekends</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Use resort's free shuttle service instead of private car</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Complimentary ski lesson or equipment upgrade</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Shuttle ticket or a photo of the shuttle service</td>
@@ -164,7 +164,7 @@ export default function FAQOrgPage() {
               <td style={{ border: '1px solid black', padding: '8px', textAlign: 'center' }}></td>
             </tr>
             <tr>
-            <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Waste Segregation for Free Bike Rentals</td>
+            <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Waste Segregation for Free Bike Rentals every Friday</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Properly segregate waste and compost</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Free bike rental for a day</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Photos of correctly sorted waste or a signed log from a waste management program</td>
@@ -234,21 +234,21 @@ export default function FAQOrgPage() {
               <td style={{ border: '1px solid black', padding: '8px', textAlign: 'center' }}>✔️</td>
             </tr>
             <tr>
-              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Concert Ticket for Public Transport Usage</td>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Concert Ticket for Public Transport Usage before 7pm</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Show proof of using public transport to get to the venue</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Early access to the concert venue or a meet-and-greet with the artists</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>Transit ticket or a screenshot of the transit app showing the trip</td>
               <td style={{ border: '1px solid black', padding: '8px', textAlign: 'center' }}>✔️</td>
             </tr>
             <tr>
-             <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Gym Membership for Energy-Saving Initiatives</td>
+             <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Gym Membership for Energy-Saving Initiatives in April</td>
              <td style={{ border: '1px solid black', padding: '8px' }}>Participate in a gym challenge to reduce water or energy usage (e.g., use less hot water in showers)</td>
              <td style={{ border: '1px solid black', padding: '8px' }}>Extra gym time (extended membership duration) or free access to special classes</td>
              <td style={{ border: '1px solid black', padding: '8px' }}>Participation certificate or a signed log from the gym</td>
              <td style={{ border: '1px solid black', padding: '8px', textAlign: 'center' }}>✔️</td>
             </tr>
             <tr>
-            <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Paid Amusement Park Entry for Carbon Offset Purchase</td>
+            <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Paid Amusement Park Entry between 10am-11am for Carbon Offset Purchase</td>
             <td style={{ border: '1px solid black', padding: '8px' }}>Buy a carbon offset for your park visit to neutralize your carbon footprint</td>
             <td style={{ border: '1px solid black', padding: '8px' }}>Fast-pass to skip lines or free access to an extra ride</td>
             <td style={{ border: '1px solid black', padding: '8px' }}>Receipt of the carbon offset purchase</td>

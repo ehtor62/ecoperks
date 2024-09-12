@@ -8,8 +8,22 @@ import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
-const GoogleMapComponent = dynamic(() => import('./googlemaps'), { ssr: false })
+const GoogleMapComponent = dynamic(() => import('../../components/shared/googlemaps'), { ssr: false })
 
+// Function to extract lat and lng from the location string
+const extractLatLng = (location: string) => {
+  const regex = /Lat:\s*([\d.-]+),\s*Lng:\s*([\d.-]+)/;
+  const match = location.match(regex);
+  
+  if (match) {
+    return {
+      lat: parseFloat(match[1]),
+      lng: parseFloat(match[2]),
+    };
+  }
+  // Return default coordinates or null if not found
+  return { lat: null, lng: null };
+};
 
 export default async function Home({ searchParams }: SearchParamProps) {
   const page = Number(searchParams?.page) || 1;
@@ -22,6 +36,18 @@ export default async function Home({ searchParams }: SearchParamProps) {
     page,
     limit: 6
   })
+
+  const formattedEvents = events?.data?.map((event: { _id: any; title: any; location: string; }) => {
+    const { lat, lng } = extractLatLng(event.location);
+
+    return {
+      id: event._id,
+      title: event.title,
+      location: event.location,
+      lat: lat,  // Retrieved from location string
+      lng: lng   // Retrieved from location string
+    };
+  });
 
   return (
     <>
@@ -70,9 +96,11 @@ export default async function Home({ searchParams }: SearchParamProps) {
           to a museum. All you need to do is, for instance, bike instead of drive, help maintain the city, work in an urban garden,
           or pledge to sustainable behaviour. Find the attractions and see how they reward your actions below.
         </p>
-        <section>
-          <div style={{ width: '100%', height: '400px' }}>
-            <GoogleMapComponent />
+        <section className="my-8">
+          <div className="flex justify-center w-full">
+            <div className="w-full max-w-4xl">
+            <GoogleMapComponent events={formattedEvents} />
+            </div>
           </div>
         </section>
         <div className="flex w-full flex-col gap-5 md:flex-row">

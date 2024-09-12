@@ -20,6 +20,9 @@ import { useUploadThing } from '@/lib/uploadthing'
 import { useRouter } from "next/navigation"
 import { createEvent, updateEvent } from "@/lib/actions/event.actions"
 import { IEvent } from "@/lib/database/models/event.model"
+import { useLoadScript, Autocomplete } from '@react-google-maps/api';
+import { Libraries } from '@react-google-maps/api'
+import { useRef } from 'react';
 
 type EventFormProps = {
   userId: string
@@ -28,27 +31,60 @@ type EventFormProps = {
   eventId?: string
 }
 
-  const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
+const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
     const [files, setFiles] = useState<File[]>([])
-  const initialValues = event && type === 'Update' 
+    const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
+
+    const initialValues = event && type === 'Update' 
     ? { 
       ...event, 
       startDateTime: new Date(event.startDateTime), 
       endDateTime: new Date(event.endDateTime) 
     }
     : eventDefaultValues;
-  const router = useRouter();
+    const router = useRouter();
+    const [libraries] = useState<Libraries>(['places']);
+    const { isLoaded } = useLoadScript({
+      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API || '',
+      libraries: libraries,
+    });
+    
+    const [location, setLocation] = useState('');
+    const [coordinates, setCoordinates] = useState<{ lat: number | null; lng: number | null }>({
+      lat: null,
+      lng: null,
+    });
+    
+    const handlePlaceSelect = () => {
+      if (autocompleteRef.current) {
+        const place = autocompleteRef.current.getPlace();
+        setLocation(place.formatted_address || "");
+        setCoordinates({
+          lat: place.geometry?.location?.lat() || null,
+          lng: place.geometry?.location?.lng() || null,
+        });
+        form.setValue("location", place.formatted_address || "");
+      }
+    };
+    
+    const { startUpload } = useUploadThing('imageUploader')
 
-  const { startUpload } = useUploadThing('imageUploader')
-
-  const form = useForm<z.infer<typeof eventFormSchema>>({
-    resolver: zodResolver(eventFormSchema),
-    defaultValues: initialValues
-  })
+    const form = useForm<z.infer<typeof eventFormSchema>>({
+      resolver: zodResolver(eventFormSchema),
+      defaultValues: initialValues
+    })
  
-  // 2. Define a submit handler.
-  async function onSubmit(values: z.infer<typeof eventFormSchema>) {
+    // 2. Define a submit handler.
+    async function onSubmit(values: z.infer<typeof eventFormSchema>) {
     let uploadedImageUrl = values.imageUrl;
+    let updatedLocation = values.location;
+
+    if (coordinates.lat !== null && coordinates.lng !== null) {
+      // Concatenate latitude and longitude to the location string
+      updatedLocation = `${values.location} (Lat: ${coordinates.lat}, Lng: ${coordinates.lng})`;
+    }
+
+    const newValues = { ...values, location: updatedLocation };
 
     if(files.length > 0) {
       const uploadedImages = await startUpload(files)
@@ -63,7 +99,7 @@ type EventFormProps = {
     if(type === 'Create') {
       try {
         const newEvent = await createEvent({
-          event: { ...values, imageUrl: uploadedImageUrl },
+          event: { ...newValues, imageUrl: uploadedImageUrl },
           userId,
           path: '/profile'
         })
@@ -86,7 +122,7 @@ type EventFormProps = {
       try {
         const updatedEvent = await updateEvent({
           userId,
-          event: { ...values, imageUrl: uploadedImageUrl, _id: eventId },
+          event: { ...newValues, imageUrl: uploadedImageUrl, _id: eventId },
           path: `/events/${eventId}`
         })
 
@@ -111,7 +147,7 @@ type EventFormProps = {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <Input placeholder="Perk title" {...field} className="input-field" />
+                  <Input placeholder="Event/Attraction title" {...field} className="input-field" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -176,14 +212,29 @@ type EventFormProps = {
                         alt="calendar"
                         width={24}
                         height={24}
+                        className="flex-shrink-0 mr-2"
                       />
-
-                      <Input placeholder="Event location or Online" {...field} className="input-field" />
-                    </div>
-
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
+                      {isLoaded ? (
+                    <Autocomplete
+                      onLoad={(autocomplete) => {
+                        autocompleteRef.current = autocomplete;
+                      }}
+                      onPlaceChanged={handlePlaceSelect}
+                    >
+                      <input
+                        type="text"
+                        placeholder="Event location"
+                        className="input-field focus:outline-none w-full h-full bg-transparent text-base"
+                        {...field}
+                      />
+                    </Autocomplete>
+                  ) : (
+                    <Input placeholder="Loading..." disabled className="w-full h-full" />
+                  )}
+                </div>
+              </FormControl>
+              <FormMessage />
+              </FormItem>
               )}
             />
         </div>
