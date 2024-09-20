@@ -268,40 +268,68 @@ export default function FAQOrgPage() {
     {
       title: "10 compelling reasons to become an organizer",
       content: (
-        <p style={{ color: 'purple' }}>
-            1.	Positive Public Image:<br></br>
-	          Corporate Social Responsibility (CSR): Demonstrating a commitment to sustainability enhances the company's or
-            institution's reputation. Brand Loyalty: Customers and visitors are more likely to support businesses that prioritize
-            environmental responsibility.<br></br><br></br>
-            2.	Increased Customer Engagement:<br></br>
-	          Customer Retention: Offering unique perks and incentives can lead to higher customer retention rates.
-            New Customer Attraction: Eco-friendly initiatives attract environmentally conscious consumers.<br></br><br></br>
-            3.	Cost Savings:<br></br>
-            Volunteer Work: Engaging volunteers in tasks like park maintenance or gardening reduces labor costs.
-            Waste Reduction: Encouraging customers to bring their own containers reduces packaging expenses.<br></br><br></br>
-            4.	Regulatory Compliance:<br></br>
-            Environmental Regulations: Proactively engaging in sustainable practices helps businesses comply with environmental laws and regulations.
-            Grants and Incentives: Some governments offer grants or incentives to businesses that implement green initiatives.<br></br><br></br>
-            5.	Employee Satisfaction:<br></br>
-            Workplace Morale: Employees take pride in working for socially responsible companies, which can improve morale and reduce turnover.
-            Employee Engagement: Opportunities for employees to participate in sustainability initiatives can boost engagement and
-            teamwork.<br></br><br></br>
-            6.	Market Differentiation:<br></br>
-            Competitive Advantage: Offering unique, sustainability-focused engagements can differentiate a business from its competitors.
-            Innovation: Developing eco-friendly initiatives can lead to innovative business practices and solutions.<br></br><br></br>
-            7.	Networking Opportunities:<br></br>
-            Partnerships: Collaborating with other eco-conscious businesses and organizations can lead to beneficial partnerships.
-            Community Involvement: Active participation in community sustainability efforts can strengthen local ties and support.<br></br><br></br>
-            8.	Customer Feedback and Insights:<br></br>
-            Engagement Programs: These initiatives provide a platform for direct interaction with customers, leading to valuable
-            feedback and insights.<br></br><br></br>
-            9.	Marketing and Promotion:<br></br>
-            Media Attention: Eco-friendly initiatives can attract positive media coverage and enhance marketing efforts.
-            Social Media Content: Engaging activities provide content for social media and other marketing channels.<br></br><br></br>
-            10.	Long-term Sustainability:<br></br>
-            Resource Conservation: Reducing waste and conserving resources ensures long-term sustainability and profitability.
-            Future-proofing: Businesses that adapt to environmental trends are better prepared for future market changes.
-        </p>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr>
+              <th style={{ border: '1px solid black', padding: '8px' }}>Effect</th>
+              <th style={{ border: '1px solid black', padding: '8px' }}>Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Positive Public Image</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Corporate Social Responsibility (CSR):<br></br> Demonstrating a commitment to sustainability enhances the company's or
+            institution's reputation<br></br>Brand Loyalty:<br></br>Customers and visitors are more likely to support businesses that prioritize
+            environmental responsibility</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Increased Customer Engagement</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Customer Retention:<br></br>Offering unique perks and incentives can lead to higher customer retention rates<br></br>
+              New Customer Attraction:<br></br>Eco-friendly initiatives attract environmentally conscious consumers</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Cost Savings</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Volunteer Work:<br></br>Engaging volunteers in tasks like park maintenance or gardening reduces labor costs<br></br>
+              Waste Reduction:<br></br>Encouraging customers to bring their own containers reduces packaging expenses</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Regulatory Compliance</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Environmental Regulations:<br></br>Proactively engaging in sustainable practices helps businesses comply with environmental laws and regulations<br></br>
+              Grants and Incentives:<br></br>Some governments offer grants or incentives to businesses that implement green initiatives</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Employee Satisfaction</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Workplace Morale:<br></br>Employees take pride in working for socially responsible companies, which can improve morale and reduce turnover<br></br>
+            Employee Engagement:<br></br>Opportunities for employees to participate in sustainability initiatives can boost engagement and
+            teamwork</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Market Differentiation</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Competitive Advantage:<br></br>Offering unique, sustainability-focused engagements can differentiate a business from its competitors<br></br>
+              Innovation:<br></br>Developing eco-friendly initiatives can lead to innovative business practices and solutions</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Networking Opportunities</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Partnerships:<br></br>Collaborating with other eco-conscious businesses and organizations can lead to beneficial partnerships<br></br>
+              Community Involvement:<br></br>Active participation in community sustainability efforts can strengthen local ties and support</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Customer Feedback and Insights</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Engagement Programs:<br></br>These initiatives provide a platform for direct interaction with customers, leading to valuable
+              feedback and insights</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Marketing and Promotion</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Media Attention:<br></br>Eco-friendly initiatives can attract positive media coverage and enhance marketing efforts<br></br>
+              Social Media Content:<br></br>Engaging activities provide content for social media and other marketing channels</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '8px', color: 'purple' }}>Long-term Sustainability</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>Resource Conservation:<br></br>Reducing waste and conserving resources ensures long-term sustainability and profitability<br></br>
+              Future-proofing:<br></br>Businesses that adapt to environmental trends are better prepared for future market changes</td>
+            </tr>
+          </tbody>
+        </table>
       )
     },
     {
