@@ -20,17 +20,21 @@ const Header = () => {
                     <NavItems />
                 </nav>
 
-                <div className="flex w-32 justify-end gap-3">
+                <div className="flex items-center justify-end gap-3">
                     <SignedIn>
                         <UserButton />
-                        <MobileNav />
                     </SignedIn>
 
                     <SignedOut>
-                        <Button asChild className="rounded-full" size="lg">
+                        <Button asChild className="rounded-full text-xs sm:text-sm" size="sm">
                             <Link href="/sign-in">Sign in / Sign up</Link>
                         </Button>
                     </SignedOut>
+
+                    {/* Always show MobileNav, regardless of sign-in status */}
+                    <div className="md:hidden">
+                        <MobileNav />
+                    </div>
                 </div>
             </div>
         </header>

@@ -1,15 +1,11 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Image from "next/image"
 import { Separator } from "../ui/separator"
 import NavItems from "./NavItems"
-
 
 const MobileNav = () => {
   return (
@@ -32,7 +28,7 @@ const MobileNav = () => {
             height={18}
           />
           <Separator className="border border-gray-50" />
-          <NavItems />
+          <NavItems isMobile={true} />
         </SheetContent>
       </Sheet>
     </nav>
