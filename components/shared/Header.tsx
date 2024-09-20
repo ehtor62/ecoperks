@@ -6,35 +6,35 @@ import NavItems from "./NavItems"
 import MobileNav from "./MobileNav"
 
 const Header = () => {
-  return (
-    <header className="w-full border-b">
-        <div className="wrapper flex items-center justify-between">
-            <Link href="/" className="w-36">
-                <Image 
-                    src="/assets/images/logo.png" width={64} height={18}
-                    alt="ecoPerks logo" 
-                />
-            </Link>
+    return (
+        <header className="w-full border-b">
+            <div className="wrapper flex items-center justify-between">
+                <Link href="/" className="w-36">
+                    <Image
+                        src="/assets/images/logo.png" width={64} height={18}
+                        alt="ecoPerks logo"
+                    />
+                </Link>
 
-            <nav className="md:flex-between hidden w-full max-w-xs">
-                <NavItems />
-            </nav>
+                <nav className="md:flex-between hidden w-full max-w-xs">
+                    <NavItems />
+                </nav>
 
-            <div className="flex w-32 justify-end gap-3">
-                <SignedIn>
-                    <UserButton showName />
-                    <MobileNav />
-                </SignedIn>
+                <div className="flex w-32 justify-end gap-3">
+                    <SignedIn>
+                        <UserButton />
+                        <MobileNav />
+                    </SignedIn>
 
-                <SignedOut>
-                    <Button asChild className="rounded-full" size="lg">
-                        <Link href="/sign-in">Sign in / Sign up</Link>
-                    </Button>
-                </SignedOut>
+                    <SignedOut>
+                        <Button asChild className="rounded-full" size="lg">
+                            <Link href="/sign-in">Sign in / Sign up</Link>
+                        </Button>
+                    </SignedOut>
+                </div>
             </div>
-        </div>
-    </header>
-  )
+        </header>
+    )
 }
 
 export default Header
