@@ -10,10 +10,15 @@ const Header = () => {
         <header className="w-full border-b">
             <div className="wrapper flex items-center justify-between">
                 <Link href="/" className="w-36">
-                    <Image
-                        src="/assets/images/logo.png" width={64} height={18}
-                        alt="ecoPerks logo"
-                    />
+                    <div style={{ position: 'relative', width: '64px', height: '64px' }}>
+                        <Image
+                            src="/assets/images/logo.png"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 64px"
+                            style={{ objectFit: 'contain' }}
+                            alt="ecoPerks logo"
+                        />
+                    </div>
                 </Link>
 
                 <nav className="md:flex-between hidden w-full max-w-xs">
